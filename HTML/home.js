@@ -1,7 +1,20 @@
 let dataRequest = new XMLHttpRequest();
 dataRequest.open("GET", "data.json");
-dataRequest.onload = () => {
+dataRequest.onloadstart = ()=>{
+  let items = document.getElementById("items");
+  items.style.width = '100vw';
+  items.style.height = '100vh';
+  items.innerHTML = '<h1>Data is Loading.........</h1>';
+}
+
+dataRequest.onloadend = () => {
   let data = JSON.parse(dataRequest.response);
+  let items = document.getElementById("items");
+  items.style.width = '93%'
+  items.style.height = '100%'
+  items.classList.add('justify-content-between')
+  items.classList.remove('align-items-center')
+items.innerHTML = ''
   for (let i = 0; i < data.length; i++) {
     let imgUrl = data[i].thumbnail;
     let imgTitle = data[i].title;
@@ -9,6 +22,7 @@ dataRequest.onload = () => {
     let prodRating = data[i].rating;
     let prodCount = data[i].stock;
     let items = document.getElementById("items");
+    
     items.innerHTML += `<div id='itemFetch' onclick=handleModalParent(${i}) class="item border p-4 pb-0 m-2 shadow d-flex flex-column justify-content-around rounded" style="width: 22%;">
         <div class="item-img" style="height:150px;">
             <img src=${imgUrl} class="" alt="" style="object-fit: contain; width:100%;height:100%">
