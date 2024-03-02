@@ -6,7 +6,8 @@ function fetchUser(e) {
   e.preventDefault();
   let password = document.getElementById("password");
   if (email.value !== "" && password.value !== "") {
-    let users = JSON.parse(localStorage.getItem("users"));
+    if(localStorage.getItem("users")){
+      let users = JSON.parse(localStorage.getItem("users"));
     let found = false;
     // console.log(users);
     console.log(found);
@@ -26,6 +27,11 @@ function fetchUser(e) {
       localStorage.setItem("presentUser", email.value);
     } else {
       alert("user details not found");
+    }
+    
+    }
+    else{
+      alert('please do register')
     }
   } else {
     alert("Please Fill out all the Fields");
