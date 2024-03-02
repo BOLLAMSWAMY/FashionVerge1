@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../Assets/logo.png" type="image/x-icon" />
+    <title>Fashion Verge-Register</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 0, 0, 0),
+            rgba(57, 39, 39, 0.386)
+          ),
+          url("../Assets/logo.png");
+        backdrop-filter: blur(3px);
+      }
+      label {
+        padding-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width: 100vw; height: 100vh; padding-top: 70px">
+      <form
+        method="post"
+        id="form"
+        class="d-flex flex-column justify-content-center align-items p-5 border m-auto bg-body-secondary rounded shadow"
+        style="width: 35%"
+      >
+        <label for="name">Name</label>
+        <input
+          class="form-control"
+          type="text"
+          id="name"
+          placeholder="Please Enter your Name"
+          required
+        />
+        <br />
+        <label for="email">E-Mail</label>
+        <input
+          class="form-control"
+          type="email"
+          id="email"
+          placeholder="Enter Your Mail Id"
+          required
+        />
+        <br />
+        <label for="password">Password</label>
+        <input
+          class="form-control"
+          type="password"
+          id="password"
+          placeholder="Enter Password"
+          required
+        />
+        <br />
+        <label for="confirmpassword">Confirm Password</label>
+        <input
+          class="form-control"
+          type="password"
+          id="confirmpassword"
+          placeholder="Confirm Password"
+          required
+        /><br />
+        <input
+          class="btn btn-success"
+          type="submit"
+          id="submit"
+          value="Register"
+        />
+        <p class="text-center mt-3">
+          If you are alredy registered with us, Please
+          <a href="./login.html">Login</a> here.
+        </p>
+      </form>
+    </div>
+    <script src="../Javascript/register.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

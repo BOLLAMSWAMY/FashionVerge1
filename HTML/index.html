@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../Assets/logo.png" type="image/x-icon" />
+    <title>Fashion Verge E-Shopping</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+      body {
+        height: 100vh;
+        width: 100vw;
+        background-image: url("../Assets/bg-home.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      #navbar {
+        background-color: rgba(61, 59, 59, 0.758);
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #nav-list {
+        width: 25%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #nav-list span {
+        color: #fff;
+        font-size: x-large;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      #nav-list span:hover {
+        transform: scale(1.1);
+        color: rgba(11, 146, 92, 0.877);
+        transition-duration: 1.5s;
+      }
+      h1 {
+        color: #d93a35;
+        text-shadow: 2px 0px 0px grey;
+        font-size: 3rem;
+        font-weight: bolder;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      h1 > strong {
+        /* margin-top: 100px; */
+        font-family: "Dancing Script", cursive;
+        font-weight: 700;
+        font-size: 7rem;
+        background-image: url("https://images.yourstory.com/cs/2/fb7ee200-7579-11e9-995c-171c030e4eb8/Ecomm-min1560422084936.jpg?fm=png&auto=format");
+        background-clip: border-box;
+        background-repeat: repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      h4 {
+        color: rgb(132, 255, 0);
+        font-size: xx-large;
+        text-shadow: 7px 0px 8px rgb(37, 33, 33);
+        font-family: cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div style="padding-left: 100px">
+        <a href="./index.html"
+          ><img src="../Assets/logo.png" alt="Main Logo" width="100px"
+        /></a>
+      </div>
+      <div id="nav-list">
+        <span class="" onclick="login()">Log In</span>
+        <span class="" onclick="register()">Register</span>
+      </div>
+    </nav>
+    <div class="text-center" style="margin-top: 100px">
+      <h1>
+        <strong>Fashion Verge E-Shopping</strong> <br />
+        Where style meets availability
+      </h1>
+      <br />
+      <br />
+      <h4>Unleash your inner fashionista</h4>
+      <h4>Fashion with no limits</h4>
+      <h4>Your one-click solution to effortless style</h4>
+    </div>
+    <script>
+      function login() {
+        window.open("../HTML/login.html");
+      }
+      function register() {
+        window.open("../HTML/register.html");
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

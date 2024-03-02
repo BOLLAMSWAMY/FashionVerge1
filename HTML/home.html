@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../Assets/logo.png" type="image/x-icon" />
+    <title>Home - Fashion Verge E-Shopping</title>
+    <link rel="stylesheet" href="../Styles/footer.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <style>
+      i {
+        cursor: pointer;
+      }
+      #cartList li {
+        margin: 15px;
+      }
+      #prodDesc {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-color: rgba(0, 255, 255, 0.381);
+        top: 0;
+      }
+      #debounceAddItem::-webkit-scrollbar {
+        display: none;
+      }
+      #debounceProd::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav border d-flex justify-content-around bg-info-subtle p-3">
+      <a href="./home.html"
+        ><img src="../Assets/logo.png" alt="logo" width="100px" height="45px"
+      /></a>
+      <input type="search" class="form-control w-25" id="searchProducts" />
+      <div class="right w-25 d-flex justify-content-between">
+        <i class="bi bi-person-fill" id="userToggle"></i>
+        <i class="bi bi-cart-check-fill" id="cartToggle"></i>
+      </div>
+      <span
+        class="position-absolute bg-danger text-light border ps-1 pe-1 rounded-5"
+        style="left: 91.7%"
+        id="cartCount"
+        >0</span
+      >
+    </nav>
+
+    <ul
+      class="border rounded shadow d-none"
+      id="debounceProd"
+      type="none"
+      style="
+        width: 373px;
+        position: absolute;
+        left: 28.7%;
+        top: 7.7%;
+        background-color: lightblue;
+        z-index: 9999;
+        max-height: 500px;
+        overflow-y: scroll;
+        border: 0cap2px solid;
+      "
+    ></ul>
+
+    <div
+      id="debounceAddItem"
+      style="
+        position: absolute;
+        left: 29%;
+        top: 3%;
+        height: 30px;
+        max-width: 23%;
+        display: none;
+        flex-wrap: wrap;
+        overflow: scroll;
+      "
+    ></div>
+    <main>
+      <div
+        class="items d-flex flex-wrap justify-content-between"
+        style="width: 90%; margin: auto"
+        id="items"
+      ></div>
+    </main>
+
+    <div
+      class="layout"
+      id="layout"
+      style="
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 9%;
+        background-color: rgba(0, 255, 255, 0.256);
+        display: none;
+      "
+    ></div>
+    <div
+      id="user"
+      class="border w-25 m-auto position-absolute flex-column align-items-center p-5"
+      style="
+        top: 60px;
+        left: 33%;
+        background-color: rgb(0, 255, 98);
+        display: none;
+      "
+    >
+      <div id="user-inside" class="text-center">
+        <p id="username">Name : <span id="name"></span></p>
+        <p id="email">E-mail : <span id="emailin"></span></p>
+        <button id="logOutButton" class="border bg-danger-subtle p-2 rounded-5">
+          Log Out
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="cart position-absolute w-100 border bg-primary-subtle p-5"
+      style="top: 50px; display: none"
+      id="cartHidden"
+    >
+      <ul type="none" id="cartList" class="">
+        <img src="" alt="" style="object-fit: fill" />
+      </ul>
+      <div
+        id="checkout"
+        style="
+          display: none;
+          width: 25%;
+          margin: auto;
+          justify-content: space-around;
+        "
+      >
+        <span id="checkoutPrice" class="text-dark p-3">0</span>
+        <a href="../HTML/checkout.html"
+          ><button class="border-0 rounded-1 p-2 bg-primary text-white">
+            Checkout
+          </button></a
+        >
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-inside">
+        <div class="footer-inside-top">
+          <div class="footer-item">
+            <h3>Fashion Verge e-Shopping</h3>
+            <p>
+              Banjara Hills Road, Punjagutta, <br />
+              Hyderabad, 590025
+            </p>
+            <p>
+              <a href="tel:+91 123 654 89" class="text-dark">+91 123 654 89</a>
+            </p>
+            <p>
+              <a href="mailto:support@fashionverge.com" class="text-dark"
+                >support@fashionverge.com</a
+              >
+            </p>
+
+            <div class="social">
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fa-brands fa-pinterest"></i>
+            </div>
+          </div>
+          <div class="footer-item">
+            <h3>FAQS</h3>
+            <ul type="none">
+              <li>Information</li>
+              <li>Payment</li>
+              <li>Shipping</li>
+              <li>Returns</li>
+              <li>Gift Card</li>
+              <li>Guest Purchase</li>
+              <li>Electronic receipt</li>
+              <li>Terms & Conditions</li>
+            </ul>
+          </div>
+          <div class="footer-item">
+            <h3>COMPANY</h3>
+            <ul type="none">
+              <li>About E-commerce Fuel</li>
+              <li>Contact</li>
+              <li>Careers</li>
+              <li>Our Journals</li>
+            </ul>
+          </div>
+          <div class="footer-item">
+            <h3>NEWSLETTER</h3>
+            <p>
+              Be the first to get the latest news about trends, promotions and
+              much more!
+            </p>
+
+            <form action="">
+              <input
+                class="form-control"
+                type="email"
+                placeholder="Enter your email address"
+              />
+            </form>
+
+            <p>By subscribing you accept the <strong>Privacy Policy</strong></p>
+            <button class="btn">SUBSCRIBE</button>
+          </div>
+        </div>
+        <div class="footer-inside-down">
+          <p>© 2024 <strong>Fashion Verge</strong>. ALL RIGHTS RESERVED</p>
+          <div class="lang">
+            <span>EN</span>
+            <span>FR</span>
+            <div class="empty"></div>
+          </div>
+          <div class="payments">
+            <span>ACCEPT FOR </span>
+            <img
+              src="https://www.svgrepo.com/show/475665/paypal-color.svg"
+              alt="pay_using_paypal"
+            />
+            <img
+              src="https://www.svgrepo.com/show/362016/mastercard-old-3.svg"
+              alt="pay_using_mastercard"
+            />
+            <img
+              src="https://www.svgrepo.com/show/452222/google-pay.svg"
+              alt="pay_using_gapy"
+            />
+            <img
+              src="https://www.svgrepo.com/show/303275/apple-pay-payment-mark-logo.svg"
+              alt="pay_using_apple_pay"
+            />
+            <img
+              src="https://www.svgrepo.com/show/303634/visa-4-logo.svg"
+              alt="pay_using_visa"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../Javascript/home.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function handleModal() {
+        let prodDesc = document.getElementById("prodDesc");
+        prodDesc.remove();
+      }
+      document.onscroll = () => {
+        if (cart.style.display === "block" && document === "50%") {
+          cart.style.display = "none";
+          cart.classList.toggle("true");
+        }
+      };
+      let user = document.getElementById("user");
+      let userToggle = document.getElementById("userToggle");
+      let cart = document.getElementById("cartHidden");
+      userToggle.onclick = () => {
+        let layout = document.getElementById("layout");
+        let user = document.getElementById("user");
+        let res = userToggle.classList.toggle("true");
+        if (res) {
+          user.style.display = "flex";
+          layout.style.display = "block";
+        } else {
+          user.style.display = "none";
+          layout.style.display = "none";
+        }
+        if (cart.style.display === "block") {
+          cart.style.display = "none";
+          cart.classList.toggle("true");
+        }
+      };
+      let layout = document.getElementById("layout");
+      layout.onclick = () => {
+        let user = document.getElementById("user");
+        if (user.style.display === "flex") {
+          user.style.display = "none";
+          layout.style.display = "none";
+          userToggle.classList.toggle("true");
+        }
+      };
+      let premail = localStorage.getItem("presentUser");
+      let pname = document.getElementById("name");
+      let pemail = document.getElementById("emailin");
+      let reqData = JSON.parse(localStorage.getItem("users"));
+      let reqUser = reqData.filter((user) => {
+        return user.email === premail;
+      });
+      let name = reqUser[0].name;
+      let email = reqUser[0].email;
+      pname.innerText = name;
+      pemail.innerText = email;
+      let logout = document.getElementById("logOutButton");
+      logout.onclick = () => {
+        window.open("./public/index.html");
+      };
+      let cartToggle = document.getElementById("cartToggle");
+      cartToggle.onclick = () => {
+        let cart = document.getElementById("cartHidden");
+        let res = cart.classList.toggle("true");
+        if (res) {
+          cart.style.display = "block";
+          let user = document.getElementById("user");
+          if (user.style.display === "flex") {
+            user.style.display = "none";
+            layout.style.display = "none";
+            userToggle.classList.toggle("true");
+          }
+        } else {
+          cart.style.display = "none";
+        }
+      };
+    </script>
+    <script src="../Javascript/debouncing.js"></script>
+  </body>
+</html>
