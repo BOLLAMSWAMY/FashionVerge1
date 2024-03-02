@@ -1,5 +1,5 @@
 let dataRequest = new XMLHttpRequest();
-dataRequest.open("GET", "../Javascript/data.json");
+dataRequest.open("GET", "data.json");
 dataRequest.onload = () => {
   let data = JSON.parse(dataRequest.response);
   for (let i = 0; i < data.length; i++) {

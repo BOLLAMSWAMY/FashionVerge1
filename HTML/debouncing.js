@@ -21,7 +21,7 @@ function getProducts() {
   debounceProd.innerHTML = "";
 }
 function getProd() {
-  fetch("../Javascript/data.json")
+  fetch("data.json")
     .then((response) => response.json())
     .then((data) => {
       let debounceProd = document.getElementById("debounceProd");
@@ -42,7 +42,7 @@ function getProd() {
 function addItem(i) {
   let debounceAddItem = document.getElementById("debounceAddItem");
   debounceAddItem.style.display = "flex";
-  fetch("../Javascript/data.json")
+  fetch("data.json")
     .then((response) => response.json())
     .then((data) => {
       let debounceAddItem = document.getElementById("debounceAddItem");

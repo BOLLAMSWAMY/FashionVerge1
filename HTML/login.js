@@ -22,7 +22,7 @@ function fetchUser(e) {
     }
     console.log(found);
     if (found) {
-      window.open("./home.html");
+      window.open("home.html");
       localStorage.setItem("presentUser", email.value);
     } else {
       alert("user details not found");
